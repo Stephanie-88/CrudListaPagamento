@@ -7,6 +7,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -14,7 +15,7 @@ import java.time.LocalDate;
 public class Pagamento {
     @Id
     @Column(name = "num_transacao", nullable = false)
-    private Integer numTransacao;
+    private Long numTransacao;
     @Column(length = 200, nullable = false)
     private String nome;
     @Column(length = 200, nullable = false)
@@ -25,7 +26,7 @@ public class Pagamento {
     private double valor;
 
     @Column(name="data_pagamento")
-    private LocalDate dataPagamento;
+    private LocalDateTime dataPagamento;
 
     @Column(name ="forma_pagamento")
     private String formaDePagamento;
