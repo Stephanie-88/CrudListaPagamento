@@ -19,8 +19,8 @@ public class Pagamento {
     private String nome;
     @Column(length = 200, nullable = false)
     private String sobrenome;
-    @Column(length = 11, nullable = false)
-    private Long telefone;
+    @Column(length = 11)
+    private String telefone;
 
     private double valor;
 
