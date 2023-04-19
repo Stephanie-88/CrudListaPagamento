@@ -60,6 +60,12 @@ public class Application {
 			p1.setFormaDePagamento("Banco Itaú");
 			p1 = pagamentoRepository.save(p1);
 
+			imprimirLista(pagamentoRepository);
+
+			pagamentoRepository.delete(p1);
+
+			imprimirLista(pagamentoRepository);
+
 			/*boolean fatura_duplicada = false;
 			Integer totalUsoEmail = pagamentoRepository.countUtilizacaoEMail(a1.getEMail());
 			if(totalUsoEmail>0){
@@ -96,6 +102,13 @@ public class Application {
 
 
 		};
+	}
+
+	private static void imprimirLista(PagamentoRepository pagamentoRepository) {
+		List<Pagamento> lista = pagamentoRepository.findAll();
+		lista.forEach(item -> {
+			System.out.println("Pagamento: " + item);
+		});
 	}
 
 }
